@@ -5,6 +5,6 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
-export const BASE_URL = process.env.VERCEL_URL
-  ? process.env.VERCEL_URL
+export const BASE_URL = process.env.BASE_URL
+  ? process.env.BASE_URL
   : "http://localhost:3000"
