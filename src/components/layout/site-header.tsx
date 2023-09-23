@@ -12,7 +12,7 @@ async function SiteHeader() {
   const token = cookies().get("anony_user_info")
   const userInfo = await getProfileInfo(token?.value)
 
-  console.log(userInfo)
+  // console.log(userInfo)
 
   return (
     <header className="py-3 md:py-8">
