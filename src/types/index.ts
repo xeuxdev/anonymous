@@ -1,9 +1,5 @@
 export interface UserProfileType {
-  email: string
-  image: string
-  id: string
+  id?: string
   userName: string
-  firstName: string
-  lastName: string
-  messageLink: string
+  messageLink?: string
 }

@@ -10,7 +10,6 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import Link from "next/link"
-import LogoutButton from "@/components/ui/logout-button"
 import { UserProfileType } from "@/types"
 import { siteConfig } from "@/config/site"
 import { usePathname } from "next/navigation"
@@ -18,9 +17,7 @@ import { usePathname } from "next/navigation"
 function Profile({ user }: { user: UserProfileType }) {
   const [isOpen, setIsOpen] = useState(false)
 
-  const image = user?.image
-    ? user?.image
-    : `https://api.multiavatar.com/${user.id}.svg`
+  const image = `https://api.multiavatar.com/${user.userName}.svg`
 
   const pathname = usePathname()
 
@@ -31,17 +28,17 @@ function Profile({ user }: { user: UserProfileType }) {
           <Avatar className="items-center justify-center">
             <AvatarImage src={image as string} className="h-8" />
             <AvatarFallback>
-              {user?.email?.charAt(0).toUpperCase()}
+              {user?.userName?.charAt(0).toUpperCase()}
             </AvatarFallback>
           </Avatar>
         </DropdownMenuTrigger>
         <DropdownMenuContent className="min-w-[14rem] mr-2 px-4">
           <DropdownMenuLabel>
             <div className="flex flex-col gap-2">
-              <div className="tracking-wider">
+              {/* <div className="tracking-wider">
                 {user.firstName} {user.lastName}
-              </div>
-              <p className="tracking-wider">{user.email}</p>
+              </div> */}
+              <p className="tracking-wider">{user.userName}</p>
             </div>
           </DropdownMenuLabel>
           <DropdownMenuSeparator />

@@ -5,8 +5,15 @@ import { siteConfig } from "@/config/site"
 import DesktopNav from "./navigations/desktop-nav"
 import Profile from "./header/profile"
 import Link from "next/link"
+import { getProfileInfo } from "@/features/user/services"
+import { cookies } from "next/headers"
 
-function SiteHeader() {
+async function SiteHeader() {
+  const token = cookies().get("anony_user_info")
+  const userInfo = await getProfileInfo(token?.value)
+
+  console.log(userInfo)
+
   return (
     <header className="py-3 md:py-8">
       <nav className="container flex items-center justify-between bg-background">
@@ -23,15 +30,7 @@ function SiteHeader() {
         <div className="flex items-center gap-3">
           <ThemeToggle />
           {/* <MobileNav /> */}
-          <Profile
-            user={{
-              email: "xeyhuru@gmail.com",
-              id: "4858h",
-              image: "",
-              firstName: "Tochukwu",
-              lastName: "John",
-            }}
-          />
+          <Profile user={userInfo} />
         </div>
       </nav>
     </header>
