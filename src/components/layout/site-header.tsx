@@ -4,18 +4,19 @@ import { Send } from "lucide-react"
 import { siteConfig } from "@/config/site"
 import DesktopNav from "./navigations/desktop-nav"
 import Profile from "./header/profile"
+import Link from "next/link"
 
 function SiteHeader() {
   return (
     <header className="py-3 md:py-8">
       <nav className="container flex items-center justify-between bg-background">
-        <div className="flex items-center gap-4">
+        <Link href={"/"} className="flex items-center gap-4">
           <p className="text-lg font-bold text-primary md:text-xl ">
             {siteConfig.name}
           </p>
 
           <Send />
-        </div>
+        </Link>
 
         <DesktopNav />
 
