@@ -10,10 +10,10 @@ export const siteConfig = {
       name: "messages",
       href: "/messages",
     },
-    {
-      name: "templates",
-      href: "/templates",
-    },
+    // {
+    //   name: "templates",
+    //   href: "/templates",
+    // },
     // {
     //     name: "",
     //     href: "/"

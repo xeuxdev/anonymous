@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <main className="container">
       <section id="#home" className="flex flex-col items-center py-20 ">
-        <h1 className="max-w-5xl mx-auto text-2xl font-bold text-center md:text-4xl lg:text-6xl">
+        <h1 className="max-w-4xl mx-auto text-2xl font-bold text-center md:text-4xl lg:text-6xl">
           Anonymously Send Messages to People
         </h1>
 
@@ -14,7 +14,9 @@ export default function Home() {
         </p>
 
         <Button asChild>
-          <Link href={"/messages"}>Get Started</Link>
+          <Link href={"/messages"} className="font-black">
+            Get Started
+          </Link>
         </Button>
       </section>
     </main>

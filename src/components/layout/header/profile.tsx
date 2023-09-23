@@ -62,12 +62,15 @@ function Profile({ user }: { user: UserProfileType }) {
               </DropdownMenuItem>
             )
           })}
+          <DropdownMenuItem onClick={() => setIsOpen(false)}>
+            <Link href={"/my-messages"}>My Messages</Link>
+          </DropdownMenuItem>
 
           <DropdownMenuSeparator />
 
-          <DropdownMenuItem>
+          {/* <DropdownMenuItem>
             <LogoutButton />
-          </DropdownMenuItem>
+          </DropdownMenuItem> */}
         </DropdownMenuContent>
       </DropdownMenu>
     </>

@@ -27,7 +27,7 @@ export async function POST(request: Request) {
       httpOnly: true,
       path: "/",
     })
-    return AppResponseData(User, 201)
+    return AppResponse("link created successfully", 201)
   } else {
     return AppResponse("something went wrong", 500)
   }

@@ -49,8 +49,8 @@ function CreateLink() {
 
     mutateAsync(username as string)
       .then((res) => {
-        toast.success("link created successfully")
-        router.push(`/messages/${res.messageLink}`)
+        toast.success(res.message)
+        router.push(`/my-messages/`)
       })
       .catch((err) => {
         toast.error(err?.response?.data.message)
