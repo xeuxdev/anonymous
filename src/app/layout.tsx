@@ -1,16 +1,17 @@
 import { ThemeProvider } from "@/components/theme/theme-provider"
 import "./globals.css"
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
+import { Raleway } from "next/font/google"
 import Toast from "@/components/toast"
 import SiteHeader from "@/components/layout/site-header"
-import { ThemeToggle } from "@/components/theme/theme-toggle"
+import { siteConfig } from "@/config/site"
+import QueryProvider from "@/components/query-provider"
 
-const inter = Inter({ subsets: ["latin"] })
+const raleway = Raleway({ subsets: ["latin"], weight: ["400", "600", "700"] })
 
 export const metadata: Metadata = {
-  title: "Ask Out",
-  description: " Ask Out - Ask your date out",
+  title: `${siteConfig.name}`,
+  description: `${siteConfig.name} +  - Ask your date out`,
 }
 
 export default function RootLayout({
@@ -20,15 +21,17 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-background`}>
+      <body className={`${raleway.className} bg-background`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-          <SiteHeader />
-          {children}
+          <QueryProvider>
+            <SiteHeader />
+            {children}
+          </QueryProvider>
           <Toast />
         </ThemeProvider>
       </body>

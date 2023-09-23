@@ -11,27 +11,21 @@ import { Menu, Send } from "lucide-react"
 import React, { useState } from "react"
 import { siteConfig } from "@/config/site"
 import Link from "next/link"
-import { Button } from "../ui/button"
-import { useMediaQuery } from "@/hooks/useMediaQuery"
+import { Button } from "../../ui/button"
 
 function MobileNav() {
   const [isOpen, setIsOpen] = useState(false)
-  const matches = useMediaQuery("(min-width: 768px)")
-
-  if (matches) {
-    return null
-  }
 
   return (
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
-      <SheetTrigger>
+      <SheetTrigger className="md:hidden">
         <Menu />
       </SheetTrigger>
       <SheetContent>
         <SheetHeader>
           <SheetTitle>
             <div className="flex items-center gap-4">
-              <p className="font-bold text-primary text-lg md:text-xl lg:text-2xl hidden md:flex">
+              <p className="hidden text-lg font-bold text-primary md:text-xl lg:text-2xl md:flex">
                 Ask Out
               </p>
 
@@ -50,7 +44,7 @@ function MobileNav() {
               key={item.name}
               asChild
               variant={"link"}
-              className="text-left pl-0 w-fit"
+              className="pl-0 text-left w-fit"
               onClick={() => {
                 setIsOpen(false)
               }}

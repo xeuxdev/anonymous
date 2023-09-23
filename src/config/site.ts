@@ -1,10 +1,14 @@
 export const siteConfig = {
-  name: "Ask Now",
+  name: "Anony",
   url: "",
   navigations: [
     {
       name: "home",
       href: "/",
+    },
+    {
+      name: "messages",
+      href: "/messages",
     },
     {
       name: "templates",
