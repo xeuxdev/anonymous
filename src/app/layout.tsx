@@ -6,6 +6,7 @@ import Toast from "@/components/toast"
 import SiteHeader from "@/components/layout/site-header"
 import { siteConfig } from "@/config/site"
 import QueryProvider from "@/components/query-provider"
+import { Analytics } from "@vercel/analytics/react"
 
 const raleway = Raleway({ subsets: ["latin"], weight: ["400", "600", "700"] })
 
@@ -49,6 +50,7 @@ export default function RootLayout({
             {children}
           </QueryProvider>
           <Toast />
+          <Analytics />
         </ThemeProvider>
       </body>
     </html>
