@@ -55,6 +55,7 @@ function SendMessageForm({ messageLink }: { messageLink: string }) {
       .then((res) => {
         toast.success(res.message)
         setIsOpen(true)
+        setMessage("")
       })
       .catch((err) => {
         toast.error(err.response.data.message)

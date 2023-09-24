@@ -10,8 +10,24 @@ import QueryProvider from "@/components/query-provider"
 const raleway = Raleway({ subsets: ["latin"], weight: ["400", "600", "700"] })
 
 export const metadata: Metadata = {
-  title: `${siteConfig.name}`,
+  metadataBase: new URL(`${siteConfig.url}`),
+  title: `${siteConfig.name} | ${siteConfig.description}`,
   description: `${siteConfig.name} +  - Ask your date out`,
+  openGraph: {
+    type: "website",
+    description: " Anonymously Send Messages to People",
+    images: "/logo.png",
+    siteName: `${siteConfig.name}`,
+    title: `${siteConfig.name} | ${siteConfig.description}`,
+    url: `${siteConfig.url}`,
+  },
+  twitter: {
+    creator: `xeuxdev`,
+    site: `${siteConfig.url}`,
+    title: `${siteConfig.name} | ${siteConfig.description}`,
+    card: "summary",
+    description: `${siteConfig.description}`,
+  },
 }
 
 export default function RootLayout({

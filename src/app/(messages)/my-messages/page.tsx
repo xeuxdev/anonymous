@@ -4,9 +4,10 @@ import { cookies } from "next/headers"
 import { redirect } from "next/navigation"
 import Share from "@/features/user/components/share"
 import MessageCard from "@/features/user/components/message-card"
+import { siteConfig } from "@/config/site"
 
 export const metadata = {
-  title: "My Messages",
+  title: `My Messages | ${siteConfig.name} - ${siteConfig.description}`,
   description: "View your messages here",
 }
 
@@ -15,6 +16,8 @@ async function MyMessages() {
   const userInfo = await getProfileInfo(token?.value)
   const messages = await getMessages(token?.value)
 
+  console.log(userInfo)
+
   // @ts-ignore
   if (userInfo.message) {
     redirect("/messages")
@@ -22,7 +25,7 @@ async function MyMessages() {
 
   return (
     <>
-      <section>
+      <section className="py-10">
         <h1 className="text-xl font-semibold">
           Welcome back, <span className="capitalize">{userInfo.userName}</span>
         </h1>

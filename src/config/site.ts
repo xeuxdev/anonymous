@@ -1,6 +1,7 @@
 export const siteConfig = {
   name: "Anony",
-  url: "",
+  url: "https://anonyy.vercel.app/",
+  description: "Send and receive messages anonymously",
   navigations: [
     {
       name: "home",

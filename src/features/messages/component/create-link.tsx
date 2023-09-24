@@ -66,8 +66,10 @@ function CreateLink() {
           </Button>
         </DialogTrigger>
         <DialogContent>
-          <DialogHeader>
-            <DialogTitle>Create your anonymous messaging link</DialogTitle>
+          <DialogHeader className="text-left">
+            <DialogTitle className="text-base md:text-lg">
+              Create your anonymous messaging link
+            </DialogTitle>
             <DialogDescription>
               This would enable you to receive messages anonymously
             </DialogDescription>
