@@ -1,4 +1,4 @@
-import React from "react"
+import React, { Suspense } from "react"
 import { getMessages, getProfileInfo } from "./api"
 import { cookies } from "next/headers"
 import { redirect } from "next/navigation"
@@ -36,10 +36,12 @@ async function MyMessages() {
       <h2 className="my-5 text-xl font-semibold ">Your messages</h2>
 
       <section className="grid grid-cols-1 gap-10 py-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        {messages.map((item, i) => (
-          <MessageCard message={item.message} key={i} />
-        ))}
-        {messages.length === 0 && <p>You have no new messages</p>}
+        <Suspense>
+          {messages.map((item, i) => (
+            <MessageCard message={item.message} key={i} />
+          ))}
+          {messages.length === 0 && <p>You have no new messages</p>}
+        </Suspense>
       </section>
     </>
   )
