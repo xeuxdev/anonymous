@@ -16,7 +16,7 @@ async function MyMessages() {
   const userInfo = await getProfileInfo(token?.value)
   const messages = await getMessages(token?.value)
 
-  console.log(userInfo)
+  // console.log(userInfo)
 
   // @ts-ignore
   if (userInfo.message) {

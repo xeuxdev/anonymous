@@ -11,7 +11,7 @@ export default function Loading() {
 
         <div className="flex flex-col justify-center gap-10 py-5 md:px-10">
           <div className="flex items-center justify-center gap-5">
-            {Array(3)
+            {Array(8)
               .fill(0)
               .map((_, i) => (
                 <Skeleton key={i} className="w-12 h-12 rounded-full" />
