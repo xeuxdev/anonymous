@@ -13,7 +13,7 @@ export async function POST(request: Request) {
     },
   })
 
-  console.log(newMessage)
+  // console.log(newMessage)
 
   if (newMessage) {
     return AppResponse("message sent successfully", 201)

@@ -1,5 +1,4 @@
 "use client"
-import { Button } from "@/components/ui/button"
 import {
   Dialog,
   DialogContent,
@@ -15,13 +14,13 @@ import DownloadImage from "./download-message"
 function MessageCard({ message }: { message: string }) {
   return (
     <>
-      <div className="p-5 rounded-md min-h-[10rem] bg-muted relative">
+      <div className="p-5 rounded-md min-h-[10rem] bg-muted relative group">
         <p className="break-words break-all text-primary">{message}</p>
 
         <Dialog>
           <DialogTrigger>
             {" "}
-            <span className="absolute grid w-8 h-8 rounded-md bg-card place-items-center top-3 right-3">
+            <span className="absolute grid w-8 h-8 rounded-md lg:hidden bg-card place-items-center top-3 right-3 group-hover:grid">
               <Download className="w-5 h-5 " />
             </span>
           </DialogTrigger>
